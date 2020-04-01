@@ -22,14 +22,14 @@ public class BSTDemo {
         bst.addElement(7);
         
         System.out.println(bst);
-        System.out.println("Depth: "+bst.getMaxDepth());
-        System.out.println("Size: "+bst.getNumNodes());
-        System.out.println("Num Leaves: "+bst.getNumLeaves());
+        System.out.printf("Depth: %d%n", bst.getMaxDepth());
+        System.out.printf("Size: %d%n", bst.getNumNodes());
+        System.out.printf("Num Leaves: %d%n", bst.getNumLeaves());
         System.out.println("Pre Order Traversal exp: ");
-        bst.preOrderTraverse();
+        System.out.println(bst.preOrderTraverse());
         System.out.println("In Order Traversal rec:");
-        bst.inOrderTraverse();
+        System.out.println(bst.inOrderTraverse());
         System.out.println("Post Order Traversal rec:");
-        bst.postOrderTraverse();
+        System.out.println(bst.postOrderTraverse());
     }
 }
