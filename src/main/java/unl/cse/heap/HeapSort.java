@@ -22,7 +22,12 @@ public class HeapSort {
 		return;
 	}
 	
-	public static void main(String args[]) {
+	/**
+	 * An ad-hoc randomized test for the {@link #heapSort(List, Comparator)}
+	 * method.
+	 * @param args
+	 */
+	public static void runTest() {
 		
 		int n = 25;
 		Random r = new Random();
@@ -47,5 +52,9 @@ public class HeapSort {
 		if(!A.equals(B)) {
 			throw new IllegalStateException("A does not appear to be sorted");
 		}
+	}
+	
+	public static void main(String args[]) {
+		HeapSort.runTest();
 	}
 }
