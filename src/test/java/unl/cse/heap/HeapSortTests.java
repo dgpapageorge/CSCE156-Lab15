@@ -31,7 +31,7 @@ public class HeapSortTests {
 	@Test
 	void heapSortFixedTest() {
 		
-		List<Integer> a = Arrays.asList(1, 6, 2, 7, 3, 8, 4, 9, 5, 10);
+		List<Integer> a = new ArrayList<>(Arrays.asList(1, 6, 2, 7, 3, 8, 4, 9, 5, 10));
 		List<Integer> b = new ArrayList<>(a);
 		HeapSort.heapSort(a, INT_CMP);
 		Collections.sort(b, INT_CMP);
