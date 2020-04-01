@@ -1,5 +1,6 @@
 package unl.cse.bst;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Stack;
 import java.util.List;
@@ -170,15 +171,24 @@ public class BinarySearchTree<T> {
     }
 
     public List<T> preOrderTraverse() {
+    	List<T> elements = new ArrayList<>();
 		//TODO: implement this
+    	
+    	return elements;
     }
 
     public List<T> inOrderTraverse() {
+    	List<T> elements = new ArrayList<>();
 		//TODO: implement this
+    	
+    	return elements;
     }
     
     public List<T> postOrderTraverse() {
+    	List<T> elements = new ArrayList<>();
 		//TODO: implement this
+    	
+    	return elements;
     }
 
     
