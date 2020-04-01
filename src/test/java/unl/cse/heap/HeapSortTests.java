@@ -16,12 +16,7 @@ public class HeapSortTests {
 	
 	public static final Random r = new Random();
 	
-	public static final Comparator<Integer> INT_CMP = new Comparator<>() {
-		@Override
-		public int compare(Integer o1, Integer o2) {
-			return o1.compareTo(o2);
-		}		
-	};
+	public static final Comparator<Integer> INT_CMP = Integer::compareTo;
 
 	/**
 	 * Tests that the {@link HeapSort#heapSort(java.util.List, java.util.Comparator)} 
@@ -31,11 +26,11 @@ public class HeapSortTests {
 	@Test
 	void heapSortFixedTest() {
 		
-		List<Integer> a = new ArrayList<>(Arrays.asList(1, 6, 2, 7, 3, 8, 4, 9, 5, 10));
-		List<Integer> b = new ArrayList<>(a);
-		HeapSort.heapSort(a, INT_CMP);
-		Collections.sort(b, INT_CMP);
-		Assertions.assertEquals(a, b, "Heapsort did not match the expected sort order for the given array");
+		List<Integer> actualList = new ArrayList<>(Arrays.asList(1, 6, 2, 7, 3, 8, 4, 9, 5, 10));
+		List<Integer> expectedList = new ArrayList<>(actualList);
+		HeapSort.heapSort(actualList, INT_CMP);
+		Collections.sort(expectedList, INT_CMP);
+		Assertions.assertEquals(expectedList, actualList, "Heapsort did not match the expected sort order for the given array");
 	}
 	
 	/**
@@ -45,16 +40,16 @@ public class HeapSortTests {
 	@RepeatedTest(10)
 	void heapSortRandomTest() {
 		
-		List<Integer> a = new ArrayList<>();
+		List<Integer> actualList = new ArrayList<>();
 		for(int i=0; i<1000; i++) {
-			a.add(r.nextInt());
+			actualList.add(r.nextInt());
 		}
-		List<Integer> b = new ArrayList<>(a);
-		HeapSort.heapSort(a, INT_CMP);
-		Collections.sort(b, INT_CMP);
+		List<Integer> expectedList = new ArrayList<>(actualList);
+		HeapSort.heapSort(actualList, INT_CMP);
+		Collections.sort(expectedList, INT_CMP);
 		
 
-		Assertions.assertEquals(a, b, "Heapsort did not match the expected sort order for the given array");
+		Assertions.assertEquals(expectedList, actualList, "Heapsort did not match the expected sort order for the given array");
 	}
 
 }
