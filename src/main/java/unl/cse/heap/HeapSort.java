@@ -8,6 +8,13 @@ import java.util.Random;
 
 public class HeapSort {
 
+	/**
+	 * Sorts the given {@link List} using the provided
+	 * {@link Comparator} using a heap sort algorithm.
+	 * @param <T>
+	 * @param list
+	 * @param comp
+	 */
 	public static <T> void heapSort(List<T> list, Comparator<T> comp) {
 
 		//TODO: implement this
@@ -37,7 +44,8 @@ public class HeapSort {
 		Collections.sort(B, comp);
 		System.out.println(A);
 		System.out.println(B);
-		if(!A.equals(B))
+		if(!A.equals(B)) {
 			throw new IllegalStateException("A does not appear to be sorted");
+		}
 	}
 }

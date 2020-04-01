@@ -1,6 +1,7 @@
 package unl.cse.heap;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.RepeatedTest;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,7 +10,6 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class HeapSortTests {
@@ -43,6 +43,7 @@ public class HeapSortTests {
 	 * method properly sorts by generating a random list of integers.
 	 */
 	@Test
+	@RepeatedTest(10)
 	void heapSortRandomTest() {
 		
 		List<Integer> a = new ArrayList<>();
