@@ -42,7 +42,6 @@ public class HeapSortTests {
 	 * Tests that the {@link HeapSort#heapSort(java.util.List, java.util.Comparator)} 
 	 * method properly sorts by generating a random list of integers.
 	 */
-	@Test
 	@RepeatedTest(10)
 	void heapSortRandomTest() {
 		
