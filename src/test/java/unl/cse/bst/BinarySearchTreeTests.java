@@ -14,7 +14,7 @@ public class BinarySearchTreeTests {
 
 	BinarySearchTree<Integer> testBST;
 
-	private static final Comparator<Integer> INT_CMP = new Comparator<>() {
+	public static final Comparator<Integer> INT_CMP = new Comparator<>() {
 		@Override
 		public int compare(Integer o1, Integer o2) {
 			return o1.compareTo(o2);
