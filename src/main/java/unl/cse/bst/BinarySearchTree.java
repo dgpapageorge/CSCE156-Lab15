@@ -180,5 +180,53 @@ public class BinarySearchTree<T> {
 		//TODO: implement this
     }
 
+    
+    @Override
+    public boolean equals(Object obj) {
+
+    	if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+
+		BinarySearchTree other = (BinarySearchTree) obj;
+
+        Stack<TreeNode<T>> s = new Stack<TreeNode<T>>();
+        Stack<TreeNode<T>> t = new Stack<TreeNode<T>>();
+
+        TreeNode<T> sCurr = this.root;
+        TreeNode<T> tCurr = other.root;
+        while(sCurr != null && tCurr != null) {
+        	
+            if(sCurr.getRightChild() != null)
+                s.push(sCurr.getRightChild());
+            if(tCurr.getRightChild() != null)
+                t.push(tCurr.getRightChild());
+
+            if(sCurr.getLeftChild() != null)
+                s.push(sCurr.getLeftChild());
+            if(tCurr.getLeftChild() != null)
+                t.push(tCurr.getLeftChild());
+
+            if(!sCurr.equals(tCurr)) {
+            	return false;
+            }
+            if(s.isEmpty())
+                sCurr = null;
+            else
+                sCurr = s.pop();
+            if(t.isEmpty())
+                tCurr = null;
+            else
+                tCurr = t.pop();
+        }
+        
+        if(sCurr != null || tCurr != null) {
+        	return false;
+        }
+        return true;
+    }
 
 }
