@@ -2,6 +2,7 @@ package unl.cse.bst;
 
 import java.util.Comparator;
 import java.util.Stack;
+import java.util.List;
 
 public class BinarySearchTree<T> {
 
@@ -168,15 +169,15 @@ public class BinarySearchTree<T> {
     	return 0;
     }
 
-    public void preOrderTraverse() {
+    public List<T> preOrderTraverse() {
 		//TODO: implement this
     }
 
-    public void inOrderTraverse() {
+    public List<T> inOrderTraverse() {
 		//TODO: implement this
     }
     
-    public void postOrderTraverse() {
+    public List<T> postOrderTraverse() {
 		//TODO: implement this
     }
 
