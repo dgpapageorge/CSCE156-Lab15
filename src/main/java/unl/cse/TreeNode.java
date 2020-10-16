@@ -1,4 +1,4 @@
-package unl.cse.bst;
+package unl.cse;
 
 public class TreeNode<T> {
 
@@ -61,6 +61,7 @@ public class TreeNode<T> {
 		return result;
 	}
 
+	@SuppressWarnings({ "rawtypes" })
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

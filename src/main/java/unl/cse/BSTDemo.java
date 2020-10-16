@@ -1,19 +1,14 @@
-package unl.cse.bst;
+package unl.cse;
 
 import java.util.Comparator;
 
 public class BSTDemo {
 
-    public static final Comparator<Integer> INTEGER_COMPARATOR = new Comparator<Integer>() {
-        @Override
-        public int compare(Integer a, Integer b) {
-            return a.compareTo(b);
-        }
-    };
+	public static final Comparator<Integer> INT_CMP = Integer::compareTo;
 
     public static void main(String args[]) {
 
-        BinarySearchTree<Integer> bst = new BinarySearchTree<Integer>(INTEGER_COMPARATOR);
+        BinarySearchTree<Integer> bst = new BinarySearchTree<Integer>(INT_CMP);
 
         bst.addElement(8);
         bst.addElement(10);
