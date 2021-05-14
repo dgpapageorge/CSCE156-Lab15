@@ -20,7 +20,7 @@ public class BinarySearchTreeTests {
 	 * Setup the {@link BinarySearchTree} we will be using
 	 */
 	@BeforeEach
-	void bstSetup() {
+	public void bstSetup() {
 		testBST = new BinarySearchTree<>(INT_CMP);
 	}
 
@@ -28,7 +28,7 @@ public class BinarySearchTreeTests {
 	 * Test adding elements to a tree
 	 */
 	@Test
-	void bstFindElementTest() {
+	public void bstFindElementTest() {
 		testBST.addElement(1);
 		testBST.addElement(2);
 		testBST.addElement(3);
@@ -58,7 +58,7 @@ public class BinarySearchTreeTests {
 	 * Test the ability to count the number of leaves in a tree
 	 */
 	@Test
-	void bstGetNumberOfLeavesTest() {
+	public void bstGetNumberOfLeavesTest() {
 		testBST.addElement(2);
 		testBST.addElement(1);
 		testBST.addElement(3);
@@ -99,7 +99,7 @@ public class BinarySearchTreeTests {
 	 * Test the ability to preorder traverse a tree
 	 */
 	@Test
-	void preOrderTraversalTest() {
+	public void preOrderTraversalTest() {
 		testBST.addElement(48);
 		testBST.addElement(28);
 		testBST.addElement(58);
@@ -118,7 +118,7 @@ public class BinarySearchTreeTests {
 	 * Test the ability to inorder traverse a tree
 	 */
 	@Test
-	void inOrderTraversalTest() {
+	public void inOrderTraversalTest() {
 		testBST.addElement(48);
 		testBST.addElement(28);
 		testBST.addElement(58);
@@ -137,7 +137,7 @@ public class BinarySearchTreeTests {
 	 * Test the ability to postorder traverse a tree
 	 */
 	@Test
-	void postOrderTraversalTest() {
+	public void postOrderTraversalTest() {
 		testBST.addElement(48);
 		testBST.addElement(28);
 		testBST.addElement(58);

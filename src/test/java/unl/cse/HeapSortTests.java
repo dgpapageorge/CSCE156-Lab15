@@ -25,7 +25,7 @@ public class HeapSortTests {
 	 * 
 	 */
 	@Test
-	void heapSortFixedTest() {
+	public void heapSortFixedTest() {
 
 		List<Integer> actualList = new ArrayList<>(Arrays.asList(1, 6, 2, 7, 3, 8, 4, 9, 5, 10));
 		List<Integer> expectedList = new ArrayList<>(actualList);
@@ -41,7 +41,7 @@ public class HeapSortTests {
 	 * properly sorts by generating a random list of integers.
 	 */
 	@RepeatedTest(10)
-	void heapSortRandomTest() {
+	public void heapSortRandomTest() {
 
 		List<Integer> actualList = new ArrayList<>();
 		for (int i = 0; i < 1000; i++) {
