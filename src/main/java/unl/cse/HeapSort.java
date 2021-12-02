@@ -17,9 +17,21 @@ public class HeapSort {
 	 * @param comp
 	 */
 	public static <T> void heapSort(List<T> list, Comparator<T> comp) {
-
-		// TODO: implement this using
-
+		boolean cont = true;
+		while(cont == true)
+		{
+			cont = false;
+			for (int i = 0; i< list.size()-1;i++)
+			{
+				if (comp.compare(list.get(i),list.get(i+1))> 0)
+				{
+					T temp = list.get(i+1);
+					list.set(i+1, list.get(i));
+					list.set(i, temp);
+					cont = true;
+				}
+			}
+		}
 		return;
 	}
 

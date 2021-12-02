@@ -157,38 +157,99 @@ public class BinarySearchTree<T> {
 	}
 
 	public T findElement(T item) {
-		if (root == null)
-			return null;
-
-		T result = null;
-		// TODO: implement this
-		return result;
+		TreeNode<T> node = root;
+		while (node != null) {
+		if (this.comparator.compare(node.getValue(), item) == 0) {
+			return node.getValue();
+		}
+		
+			if (this.comparator.compare(node.getValue(), item) > 0) {
+				node = node.getLeftChild();
+			} else {
+				node = node.getRightChild();
+			}
+		}
+		return null;
 	}
 
 	public int getNumLeaves() {
-		// TODO: implement this
-		return 0;
+		int count = 0;
+
+		if (root == null)
+			return count;
+		
+		Stack<TreeNode<T>> s = new Stack<TreeNode<T>>();
+		TreeNode<T> curr = root;
+		while (curr != null) {
+			if (curr.getRightChild() != null)
+				s.push(curr.getRightChild());
+			if (curr.getLeftChild() != null)
+				s.push(curr.getLeftChild());
+
+			if (s.isEmpty())
+				curr = null;
+			else
+			{
+				curr = s.pop();
+				if (curr.getLeftChild()==null && curr.getRightChild()==null)
+					count++;
+			}
+		}
+		return count;
 	}
 
 	public List<T> preOrderTraverse() {
-		List<T> elements = new ArrayList<>();
-		// TODO: implement this
-
-		return elements;
+		List<T> results = new ArrayList<>();
+		TreeNode<T> curr = root;
+		preOrderRecursive(curr,results);
+		return results;
+	}
+	
+	public void preOrderRecursive(TreeNode<T> curr, List<T> results)
+	{
+		if (curr == null)
+		{
+			return;
+		}
+		results.add(curr.getValue());
+		preOrderRecursive(curr.getLeftChild(),results);
+		preOrderRecursive(curr.getRightChild(),results);
 	}
 
 	public List<T> inOrderTraverse() {
-		List<T> elements = new ArrayList<>();
-		// TODO: implement this
-
-		return elements;
+		List<T> results = new ArrayList<>();
+		TreeNode<T> curr = root;
+		inOrderRecursive(curr,results);
+		return results;
+	}
+	
+	public void inOrderRecursive(TreeNode<T> curr, List<T> results)
+	{
+		if (curr == null)
+		{
+			return;
+		}
+		inOrderRecursive(curr.getLeftChild(),results);
+		results.add(curr.getValue());
+		inOrderRecursive(curr.getRightChild(),results);
 	}
 
 	public List<T> postOrderTraverse() {
-		List<T> elements = new ArrayList<>();
-		// TODO: implement this
-
-		return elements;
+		List<T> results = new ArrayList<>();
+		TreeNode<T> curr = root;
+		postOrderRecursive(curr,results);
+		return results;
+	}
+	
+	public void postOrderRecursive(TreeNode<T> curr, List<T> results)
+	{
+		if (curr == null)
+		{
+			return;
+		}
+		postOrderRecursive(curr.getLeftChild(),results);
+		postOrderRecursive(curr.getRightChild(),results);
+		results.add(curr.getValue());
 	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
